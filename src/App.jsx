@@ -99,7 +99,7 @@ function App() {
       >
         <section className="hero">
           <h1 id="heroTitle">
-            Meri <span className="highlight">Rasmalai</span> 🍰
+            Meri <span className="highlight">Rasmalai</span> 
           </h1>
           <p>I have a little surprise for you 🎀</p>
         </section>
