@@ -32,8 +32,7 @@
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
-  height: 450px;
-  max-height: 55vh;
+  min-height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,13 +88,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: repeating-linear-gradient(
-    90deg,
-    transparent,
-    transparent 10px,
-    rgba(0, 0, 0, 0.1) 10px,
-    rgba(0, 0, 0, 0.1) 11px
-  );
+  background: repeating-linear-gradient(90deg,
+      transparent,
+      transparent 10px,
+      rgba(0, 0, 0, 0.1) 10px,
+      rgba(0, 0, 0, 0.1) 11px);
   pointer-events: none;
 }
 
@@ -162,10 +159,12 @@
 }
 
 @keyframes hintPulse {
+
   0%,
   100% {
     transform: translate(-50%, -50%) scale(1);
   }
+
   50% {
     transform: translate(-50%, -50%) scale(1.05);
   }
@@ -208,7 +207,7 @@
   border: 2px solid rgba(233, 30, 99, 0.1);
   backdrop-filter: blur(10px);
   white-space: pre-line;
-  max-height: 50vh;
+  max-height: 60vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   width: 100%;
@@ -304,43 +303,43 @@
 /* Mobile portrait */
 @media (max-width: 600px) {
   .message {
-    padding: 15px 10px;
+    padding: 10px;
     max-width: 100%;
     margin: 0 auto;
-    overflow: hidden;
-    justify-content: center;
+    overflow: visible;
+    justify-content: flex-start;
+    padding-top: max(env(safe-area-inset-top), 15px);
   }
 
   .curtain-container {
     max-width: 100%;
-    height: 320px;
-    max-height: 45vh;
+    min-height: 350px;
     margin: 0 auto;
   }
 
   .message h2 {
-    font-size: 1.3rem;
-    margin: 5px 0 15px 0;
+    font-size: 1.2rem;
+    margin: 5px 0 10px 0;
     padding: 0 10px;
   }
 
   .message-content {
-    padding: 12px;
+    padding: 10px;
   }
 
   .message-content .typed-text {
-    padding: 18px 20px;
-    font-size: 0.9rem;
+    padding: 16px 18px;
+    font-size: 0.85rem;
     line-height: 1.5;
-    max-height: 38vh;
+    max-height: 55vh;
     border-radius: 15px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
 
   .curtain-hint {
-    font-size: 1rem;
-    padding: 12px 25px;
+    font-size: 0.95rem;
+    padding: 10px 22px;
     border-radius: 40px;
   }
 
@@ -378,33 +377,33 @@
 /* Small mobile devices */
 @media (max-width: 480px) {
   .message {
-    padding: 12px 8px;
-    overflow: hidden;
+    padding: 8px;
+    overflow: visible;
   }
 
   .curtain-container {
-    min-height: 280px;
-    margin: 10px auto;
+    min-height: 320px;
+    margin: 5px auto;
   }
 
   .message h2 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
   }
 
   .message-content .typed-text {
-    padding: 18px 16px;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    max-height: 42vh;
+    padding: 14px 14px;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    max-height: 55vh;
     border-radius: 12px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
 
   .curtain-hint {
-    font-size: 1rem;
-    padding: 12px 24px;
+    font-size: 0.9rem;
+    padding: 10px 20px;
     border-radius: 35px;
   }
 
@@ -479,15 +478,14 @@
 }
 
 /* High DPI displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
   .curtain::before {
-    background: repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 8px,
-      rgba(0, 0, 0, 0.08) 8px,
-      rgba(0, 0, 0, 0.08) 9px
-    );
+    background: repeating-linear-gradient(90deg,
+        transparent,
+        transparent 8px,
+        rgba(0, 0, 0, 0.08) 8px,
+        rgba(0, 0, 0, 0.08) 9px);
   }
 }
 
@@ -502,11 +500,13 @@
   }
 
   @keyframes hintPulseMobile {
+
     0%,
     100% {
       transform: translate(-50%, -50%) scale(1);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
+
     50% {
       transform: translate(-50%, -50%) scale(1.08);
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);

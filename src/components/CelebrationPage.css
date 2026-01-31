@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 20px;
   overflow: hidden;
   overflow-y: auto;
@@ -45,10 +45,12 @@
     transform: translateX(0) rotate(0deg);
     opacity: 0.3;
   }
+
   50% {
     transform: translateX(20px) rotate(180deg);
     opacity: 0.5;
   }
+
   100% {
     bottom: 110%;
     transform: translateX(-20px) rotate(360deg);
@@ -85,10 +87,12 @@
 }
 
 @keyframes pulse {
+
   0%,
   100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
@@ -303,10 +307,12 @@
 }
 
 @keyframes pulse-glow {
+
   0%,
   100% {
     box-shadow: 0 8px 25px rgba(255, 87, 34, 0.4);
   }
+
   50% {
     box-shadow: 0 8px 35px rgba(255, 87, 34, 0.6);
   }
@@ -355,12 +361,14 @@
 }
 
 @keyframes twinkle {
+
   0%,
   100% {
     opacity: 1;
     transform: scale(1);
     box-shadow: 0 0 15px currentColor;
   }
+
   50% {
     opacity: 0.3;
     transform: scale(0.8);
@@ -437,10 +445,12 @@
 }
 
 @keyframes sway {
+
   0%,
   100% {
     transform: rotate(0deg);
   }
+
   50% {
     transform: rotate(5deg);
   }
@@ -469,11 +479,9 @@
 .balloon-body {
   width: 60px;
   height: 80px;
-  background: radial-gradient(
-    circle at 35% 30%,
-    rgba(255, 255, 255, 0.5),
-    transparent 60%
-  );
+  background: radial-gradient(circle at 35% 30%,
+      rgba(255, 255, 255, 0.5),
+      transparent 60%);
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   position: relative;
   box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.1),
@@ -487,39 +495,31 @@
 
 .balloon-0 .balloon-body {
   background-color: #ff4081;
-  background-image: radial-gradient(
-    circle at 35% 30%,
-    rgba(255, 255, 255, 0.5),
-    transparent 60%
-  );
+  background-image: radial-gradient(circle at 35% 30%,
+      rgba(255, 255, 255, 0.5),
+      transparent 60%);
 }
 
 .balloon-1 .balloon-body {
   background-color: #00bcd4;
-  background-image: radial-gradient(
-    circle at 35% 30%,
-    rgba(255, 255, 255, 0.5),
-    transparent 60%
-  );
+  background-image: radial-gradient(circle at 35% 30%,
+      rgba(255, 255, 255, 0.5),
+      transparent 60%);
 }
 
 .balloon-2 .balloon-body {
   background-color: #ffeb3b;
-  background-image: radial-gradient(
-    circle at 35% 30%,
-    rgba(255, 255, 255, 0.5),
-    transparent 60%
-  );
+  background-image: radial-gradient(circle at 35% 30%,
+      rgba(255, 255, 255, 0.5),
+      transparent 60%);
 }
 
 .balloon-string {
   width: 2px;
   height: 80px;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.1)
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.1));
   margin: 0 auto;
   position: relative;
 }
@@ -537,16 +537,20 @@
 }
 
 @keyframes floatUp {
+
   0%,
   100% {
     transform: translateY(0) translateX(0) rotate(0deg);
   }
+
   25% {
     transform: translateY(-30px) translateX(15px) rotate(3deg);
   }
+
   50% {
     transform: translateY(-50px) translateX(-10px) rotate(-2deg);
   }
+
   75% {
     transform: translateY(-30px) translateX(10px) rotate(2deg);
   }
@@ -623,6 +627,7 @@
   0% {
     transform: scaleY(1) scaleX(1);
   }
+
   100% {
     transform: scaleY(1.1) scaleX(0.9);
   }
