@@ -7,6 +7,7 @@ import Countdown from "./components/Countdown";
 import Effects from "./components/Effects";
 import Gallery from "./components/Gallery";
 import Hearts from "./components/Hearts";
+import IntroLoader from "./components/IntroLoader";
 import MessageCard from "./components/MessageCard";
 import MusicPlayer from "./components/MusicPlayer";
 
@@ -26,6 +27,7 @@ function App() {
   // const [birthdayReached, setBirthdayReached] = useState(false);
 
   const [showEffects, setShowEffects] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
 
   const page1Ref = useRef(null); // Countdown page
   const page2Ref = useRef(null); // Celebration Page
@@ -83,10 +85,13 @@ function App() {
 
   return (
     <div className="app">
+      {/* Romantic Intro Loader */}
+      {showIntro && <IntroLoader onComplete={() => setShowIntro(false)} />}
+
       <MusicPlayer ref={musicPlayerRef} />
       <Hearts />
 
-      {/* PAGE 1: Countdown Timer */}
+      {/* PAGE 1: Simple Landing with Celebrate Button */}
       <div
         ref={page1Ref}
         className={`page ${currentPage === 1 ? "active" : ""}`}
@@ -94,38 +99,14 @@ function App() {
       >
         <section className="hero">
           <h1 id="heroTitle">
-            {birthdayReached ? (
-              <>
-                Happy Birthday <span className="highlight">Mili</span> 🎂
-              </>
-            ) : (
-              <>
-                Counting down to <span className="highlight">Mili's</span>{" "}
-                special day 🎂
-              </>
-            )}
+            Meri <span className="highlight">Rasmalai</span> 🍰
           </h1>
-          <p>Wishing you the most magical birthday ever! 😌💗</p>
-        </section>
-
-        <Countdown
-          onBirthdayReached={handleBirthdayReached}
-          birthdayReached={birthdayReached}
-        />
-
-        <section className="teaser">
-          <h2 id="teaserHeading">
-            {birthdayReached
-              ? "💖 Ready for your surprise, Mili! 💖"
-              : "✨ A special celebration awaits you at midnight... ✨"}
-          </h2>
-          <p className="teaser-hint">Something magical awaits you</p>
+          <p>I have a little surprise for you 🎀</p>
         </section>
 
         <button
           id="surpriseBtn"
           className="celebrate-btn"
-          disabled={!birthdayReached}
           onClick={() => goToPage(2)}
         >
           🎀 Let's Celebrate
