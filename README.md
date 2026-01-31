@@ -76,7 +76,7 @@ const targetDate = new Date("2025-12-25T12:00:00");
 **File:** `src/components/MessageCard.jsx` (Lines 17-28)
 
 ```javascript
-const recipientName = "Divyanshi";
+const recipientName = "Swastika";
 const senderName = "Ashmit";
 const message = `Your message here...`;
 ```
